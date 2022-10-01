@@ -1,0 +1,9 @@
+[
+	{
+		"correct_answers":
+		[
+			"it is palindrome"
+		],
+		"test": "123321\n"
+	}
+]
