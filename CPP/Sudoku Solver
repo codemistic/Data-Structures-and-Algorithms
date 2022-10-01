@@ -1,0 +1,53 @@
+class Solution {
+public:
+    
+    int isValidSudoku(vector<vector<char>> &A,int x,int y,char c) {
+    // for row check
+    for(int i = 0;i<A[x].size();i++){
+        if(A[x][i]==c) return 0;
+    }
+    // for column check
+    for(int i = 0;i<A.size();i++){
+        if(A[i][y]==c) return 0;
+    }
+    // for block check
+    int row = x/3;
+    row = row * 3;
+    int col = y/3;
+    col = col * 3;
+    // cout<<row<<" "<<col<<endl;
+    for(int i = row;i<row + 3;i++){
+        for(int j = col;j<col+3;j++){
+            if(A[i][j]==c) return 0;
+        }
+    }
+    return 1;
+
+
+}
+
+bool solve(vector<vector<char>> &board){
+    for(int i = 0;i<9;i++){
+        for(int j = 0;j<9;j++){
+            if(board[i][j]=='.'){
+                for(int x = 1;x<=9;x++){
+                    char num = x + '0';
+                    if(isValidSudoku(board,i,j,num)){
+                        board[i][j] = num;
+                        if(solve(board)==true) return true;
+                        else board[i][j] = '.';
+                    }
+                }
+            }
+            if(board[i][j]=='.'){
+                return false;
+            }
+        }
+    }
+    return true;
+}
+
+    void solveSudoku(vector<vector<char>>& board) {
+        solve(board);
+    }
+};
