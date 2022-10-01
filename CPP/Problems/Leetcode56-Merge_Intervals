@@ -1,0 +1,22 @@
+class Solution {
+public:
+    vector<vector<int>> merge(vector<vector<int>>& intervals)
+    {
+          if(intervals.size() < 2)
+              return intervals;
+        
+        //sort from beginning
+        sort(intervals.begin(), intervals.end());
+        
+        vector<vector<int>> Soln;
+        
+        for(vector<int>& interval : intervals)
+        {
+            if(Soln.empty() || Soln.back()[1] < interval[0])
+                Soln.push_back(interval);
+            else
+                Soln[Soln.size()-1][1] = max(Soln.back()[1], interval[1]);
+        }
+        return Soln;
+    }
+};
