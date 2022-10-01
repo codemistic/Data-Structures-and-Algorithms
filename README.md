@@ -2,7 +2,6 @@
     <b>Data Structures and Algorithms</b>
 </h1>
 
-<a href="https://github.com/codemistic/Data-Structures-and-Algorithms/pulls"><img src="https://img.shields.io/github/issues-pr/codemistic/Data-Structures-and-Algorithms" alt="Pull Requests Badge"/></a>
 <a href="https://github.com/codemistic/Data-Structures-and-Algorithms/graphs/contributors"><img alt="GitHub contributors" src="https://img.shields.io/github/contributors/codemistic/Data-Structures-and-Algorithms?color=2b9348"></a>
 <a href="https://github.com/codemistic/Data-Structures-and-Algorithms/blob/master/LICENSE"><img src="https://img.shields.io/github/license/codemistic/Data-Structures-and-Algorithms?color=2b9348" alt="License Badge"/></a>
 <a hreaf="https://github.com/codemistic/Data-Structures-and-Algorithms/issues"><img src="https://img.shields.io/github/issues/codemistic/Data-Structures-and-Algorithms?color=pink&logo=github"/></a>
