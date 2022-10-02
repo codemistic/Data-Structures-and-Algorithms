@@ -31,9 +31,9 @@ class BinarySearch {
 	public static void main(String args[])
 	{
 		BinarySearch ob = new BinarySearch();
-		int arr[] = { 2, 3, 4, 10, 40 };
+		int arr[] = { 2, 3, 4, 10, 40 }; //array to search
 		int n = arr.length;
-		int x = 10;
+		int x = 10; //element to search 
 		int result = ob.binarySearch(arr, 0, n - 1, x);
 		if (result == -1)
 			System.out.println("Element not present");
@@ -42,4 +42,4 @@ class BinarySearch {
 							+ result);
 	}
 }
-/* This code is contributed by Rajat Mishra */
+
