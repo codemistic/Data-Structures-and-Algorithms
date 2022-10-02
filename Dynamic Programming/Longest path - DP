@@ -1,0 +1,106 @@
+Problem - https://atcoder.jp/contests/dp/tasks/dp_g
+
+Solution
+
+import java.io.*;
+import java.util.*;
+
+class Main {
+    static PrintWriter out = new PrintWriter(System.out);
+    static final int mod = 1_000_000_007;
+    static int max = (int)(1e8);
+
+    static class FastReader {
+        BufferedReader br;
+        StringTokenizer st;
+
+        public FastReader() {
+            br = new BufferedReader(new
+                    InputStreamReader(System.in));
+        }
+
+        String next() {
+            while (st == null || !st.hasMoreElements()) {
+                try {
+                    st = new StringTokenizer(br.readLine());
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+            return st.nextToken();
+        }
+
+        int nextInt() {
+            return Integer.parseInt(next());
+        }
+
+        int[] readIntArray(int n) {
+            int[] a = new int[n];
+            for (int i = 0; i < n; i++)
+                a[i] = nextInt();
+            return a;
+        }
+
+        long[] readLongArray(int n) {
+            long[] a = new long[n];
+            for (int i = 0; i < n; i++)
+                a[i] = nextLong();
+            return a;
+        }
+
+        long nextLong() {
+            return Long.parseLong(next());
+        }
+
+        double nextDouble() {
+            return Double.parseDouble(next());
+        }
+
+        String nextLine() {
+            String str = "";
+            try {
+                str = br.readLine();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            return str;
+        }
+    }
+
+    /*--------------------------------------------------------------------------*/
+    static ArrayList<ArrayList<Integer>> adj;
+    static int[] dp;
+    public static void main(String[] args) {
+        FastReader s = new FastReader();
+        int n = s.nextInt();
+        int m = s.nextInt();
+        adj = new ArrayList<>();
+        dp = new int[n];
+        Arrays.fill(dp, -1);
+        for(int i=0;i<n;i++)
+            adj.add(new ArrayList<>());
+        for(int i=0;i<m;i++){
+            int u = s.nextInt()-1;
+            int v = s.nextInt()-1;
+            adj.get(u).add(v);
+        }
+
+        int res = 0;
+        for(int i=0;i<n;i++)
+            res = Math.max(res, find(i));
+        out.println(res);
+
+        out.close();
+    }
+
+    public static int find(int u)
+    {
+        if(dp[u] != -1)
+            return dp[u];
+
+        int res = 0;
+        for(Integer v: adj.get(u))
+            res = Math.max(res, 1 + find(v));
+        return dp[u] = res;
+    }
+}
