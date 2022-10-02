@@ -1,0 +1,122 @@
+Problem - https://atcoder.jp/contests/dp/tasks/dp_e
+
+Solution 
+
+import java.io.*;
+import java.util.*;
+
+ class Main {
+    static PrintWriter out = new PrintWriter(System.out);
+    static final int mod = 1_000_000_007;
+
+    static class FastReader {
+        BufferedReader br;
+        StringTokenizer st;
+
+        public FastReader() {
+            br = new BufferedReader(new
+                    InputStreamReader(System.in));
+        }
+
+        String next() {
+            while (st == null || !st.hasMoreElements()) {
+                try {
+                    st = new StringTokenizer(br.readLine());
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+            return st.nextToken();
+        }
+
+        int nextInt() {
+            return Integer.parseInt(next());
+        }
+
+        int[] readIntArray(int n) {
+            int[] a = new int[n];
+            for (int i = 0; i < n; i++)
+                a[i] = nextInt();
+            return a;
+        }
+
+        long[] readLongArray(int n) {
+            long[] a = new long[n];
+            for (int i = 0; i < n; i++)
+                a[i] = nextLong();
+            return a;
+        }
+
+        long nextLong() {
+            return Long.parseLong(next());
+        }
+
+        double nextDouble() {
+            return Double.parseDouble(next());
+        }
+
+        String nextLine() {
+            String str = "";
+            try {
+                str = br.readLine();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            return str;
+        }
+    }
+
+    /*--------------------------------------------------------------------------*/
+    //Try seeing general case
+    static int n, W;
+    static int[] weight, values;
+    static long[][] memo;
+    public static void main(String[] args) {
+        FastReader s = new FastReader();
+        n = s.nextInt();
+        W = s.nextInt();
+        weight = new int[n];
+        values = new int[n];
+        memo = new long[110][100010];
+        for(long[] x: memo)
+            Arrays.fill(x, -1);
+
+        for(int i=0;i<n;i++)
+        {
+            weight[i] = s.nextInt();
+            values[i] = s.nextInt();
+        }
+
+        for(int v=100000;v>=0;v--)
+        {
+            if(find(0, v)<=W)
+            {
+                out.println(v);
+                break;
+            }
+        }
+
+        out.close();
+    }
+
+    public static long find(int i, int value)
+    {
+        if(value == 0)//We want exact value
+            return 0;
+
+        if(i == n)//value is still greater than 0
+            return (long)(1e15);
+
+        if(memo[i][value]!=-1)
+            return memo[i][value];
+
+        if(values[i]<=value)
+        {
+            long x1 = weight[i] + find(i+1, value-values[i]);
+            long x2 = find(i+1, value);
+            return memo[i][value] = Math.min(x1, x2);
+        }
+        else
+            return memo[i][value] = find(i+1, value);
+    }
+}
