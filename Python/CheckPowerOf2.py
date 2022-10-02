@@ -2,8 +2,4 @@
 #An integer n is a power of two, if there exists an integer x such that n == 2x.
 
 def isPowerOfTwo(self, n: int) -> bool:
-        if n<0:
-            return False
-        if str(bin(n)).count('1')==1:
-            return True
-        return False
+        return (n != 0) and ((n & (n - 1)) == 0)
