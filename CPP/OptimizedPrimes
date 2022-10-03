@@ -1,0 +1,27 @@
+// SIEVE OF ERATOSTHENES
+// Program to find number of primes smaller than a given number using SIEVE OF ERATOSTHENES
+// optimized approach
+// Time Complexity - O(log(log(n)))
+
+#include <iostream>
+#include <vector>
+using namespace std;
+
+int main() {
+    int count = 0; // to count number of primes
+    int target;
+    cin>>target;
+    vector<bool> vect (target+1, true); // target+1 bcoz 1 extra space is needed to accomodate the number 0
+    vect[0] = vect[1] = false; // The numbers 0 and 1 are not primes
+
+    for (int i = 2; i < target; i++) {
+        if (vect[i]) {
+            for (int j = 2*i; j <= target; j += i) {
+                vect[j] = false;
+            }
+            count++;
+        }
+    }
+    cout<<count;
+    return 0;
+}
