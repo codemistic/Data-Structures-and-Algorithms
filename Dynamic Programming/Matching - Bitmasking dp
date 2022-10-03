@@ -1,0 +1,106 @@
+Problem - https://atcoder.jp/contests/dp/tasks/dp_o
+
+Solution 
+
+import java.io.*;
+import java.util.*;
+
+class Main {
+    static PrintWriter out = new PrintWriter(System.out);
+    static final int mod = 1_000_000_007;
+    static int max = (int)(1e8);
+
+    static class FastReader {
+        BufferedReader br;
+        StringTokenizer st;
+
+        public FastReader() {
+            br = new BufferedReader(new
+                    InputStreamReader(System.in));
+        }
+
+        String next() {
+            while (st == null || !st.hasMoreElements()) {
+                try {
+                    st = new StringTokenizer(br.readLine());
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+            return st.nextToken();
+        }
+
+        int nextInt() {
+            return Integer.parseInt(next());
+        }
+
+        int[] readIntArray(int n) {
+            int[] a = new int[n];
+            for (int i = 0; i < n; i++)
+                a[i] = nextInt();
+            return a;
+        }
+
+        long[] readLongArray(int n) {
+            long[] a = new long[n];
+            for (int i = 0; i < n; i++)
+                a[i] = nextLong();
+            return a;
+        }
+
+        long nextLong() {
+            return Long.parseLong(next());
+        }
+
+        double nextDouble() {
+            return Double.parseDouble(next());
+        }
+
+        String nextLine() {
+            String str = "";
+            try {
+                str = br.readLine();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            return str;
+        }
+    }
+
+    /*--------------------------------------------------------------------------*/
+    static Integer[] memo;
+    public static void main(String[] args) {
+        FastReader s = new FastReader();
+        int n = s.nextInt();
+        int[][] a = new int[n][n];
+        memo = new Integer[1<<n];
+        for(int i=0;i<n;i++)
+            a[i] = s.readIntArray(n);
+        out.println(find(n, a, 0));
+
+        out.close();
+    }
+
+    public static int find(int n, int[][] a, int mask)
+    {
+        int i = Integer.bitCount(mask);
+        if(i == n)
+            return mask == (1<<n)-1 ? 1 : 0;
+
+        if(memo[mask] != null)
+            return memo[mask];
+
+        int res = 0;
+        for(int j=0;j<n;j++)
+        {
+            if(a[i][j] == 0)
+                continue;
+
+            if((mask&(1<<j)) != 0)//Means already set
+                continue;
+
+            res = (res + find(n, a, mask|(1<<j))) % mod;
+        }
+        return memo[mask] = res;
+    }
+}
