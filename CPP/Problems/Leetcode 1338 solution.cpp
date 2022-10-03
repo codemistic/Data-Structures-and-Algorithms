@@ -1,16 +1,21 @@
 class Solution {
 public:
-    int numSubarraysWithSum(vector<int>& nums, int goal) {
+    int minSetSize(vector<int>& arr) {
+        vector<pair<int,int>> ans;
         unordered_map<int,int> m;
-        m[0]=1;
-        int ans=0,s=0;
-        for(auto x:nums)
+        for(auto x:arr)
+            m[x]++;
+        for(auto x:m)
+            ans.push_back({x.second,x.first});
+        sort(ans.begin(),ans.end(),greater<pair<int,int>>());
+        int fans=0,temp=0,n=arr.size()/2;
+        for(int i=0;i<ans.size();i++)
         {
-            s+=x;
-            if(m.find(s-goal)!=m.end())
-                ans+=m[s-goal];
-            m[s]++;
+            temp+=ans[i].first;
+            fans++;
+            if(temp>=n)
+                return fans;
         }
-        return ans;
+        return 0;
     }
 };
