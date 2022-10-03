@@ -1,0 +1,37 @@
+public class MergeSort {
+    public static void merge(int arr[],int l,int h){
+        if(l<h){
+            int mid = l+(h-l)/2;
+            merge(arr,l,mid);
+            merge(arr,mid+1,h);
+            sort(arr,l,mid,h);
+        }
+    }
+    static void sort(int arr[],int l,int mid,int h){
+        int st1 = l;
+        int st2 = mid+1;
+        int ind = l;
+        int tp[] = new int [h+l+1];
+        while(st1<=mid && st2<=h){
+            if(arr[st1]<arr[st2])
+                tp[ind++]=arr[st1++];
+            else
+                tp[ind++]=arr[st2++];
+        }
+        while(st1<=mid)
+            tp[ind++]=arr[st1++];
+        while(st2<=h){
+            tp[ind++]=arr[st2++];
+        }
+        for(int i=l;i<=h;i++){
+            arr[i]=tp[i];
+        }
+        
+    }
+    public static void main(String[] args) {
+        int arr [] = {8,1,5,3,6,8,1};
+        merge(arr,0,6);
+        for(int ar : arr)
+            System.out.println(ar);
+    }
+}

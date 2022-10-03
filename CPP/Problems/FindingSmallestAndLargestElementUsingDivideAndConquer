@@ -1,0 +1,61 @@
+#include <iostream>
+#include <bits/stdc++.h>
+#include <climits>
+using namespace std;
+
+void cal(vector<int> &arr,vector<int> &res,int l,int u)
+{
+    int sz=(u-l+1);
+    int min1=INT_MAX,max1=0;
+    for (int i=l;i<=u;i++)
+    {
+        if (arr[i]<min1)
+            min1=arr[i];
+        if (arr[i]>max1)
+            max1=arr[i];
+    }
+    if (sz==1)
+    {
+        res[0]=(res[0]<min1)?res[0]:min1;
+        res[1]=(res[1]>max1)?res[1]:max1;
+    }
+    else
+    {
+        for (int i=l;i<=u;i++)
+        {
+            if (arr[i]<res[0] && arr[i]!=min1)
+                res[0]=(res[0]<arr[i])?res[0]:arr[i];
+            if (arr[i]>res[1] && arr[i]!=max1)
+                res[1]=(res[1]>arr[i])?res[1]:arr[i];
+        }
+    }
+}
+
+void show(vector<int> &arr,vector<int> &res,int l,int u)
+{
+    int size1=(u-l+1);
+    if (size1>4)
+    {
+        int mid=l+(u-l)/2;
+        show(arr,res,l,mid);
+        show(arr,res,mid+1,u);
+    }
+    cal(arr,res,l,u);
+}
+
+int main()
+{
+    int n=0;
+    cout<<"PLEASE ENTER THE NUMBER OF ARRAY ELEMENTS"<<endl;
+    cin>>n;
+    vector<int> arr(n,0),res(2,0);
+    res[0]=INT_MAX;
+    res[1]=0;
+    cout<<"PLEASE ENTER THE ARRAY ELEMENTS"<<endl;
+    for (int i=0;i<n;i++)
+        cin>>arr[i];
+    show(arr,res,0,n-1);
+    cout<<"THE SECOND SMALLEST NUMBER IS- "<<res[0]<<endl
+    cout<<"THE SECOND LARGEST NUMBER IS- "<<res[1]<<endl;
+    return 0;
+}

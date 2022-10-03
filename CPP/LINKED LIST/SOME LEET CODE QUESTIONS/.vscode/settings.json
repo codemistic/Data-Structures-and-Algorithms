@@ -1,0 +1,12 @@
+{
+    "files.associations": {
+        "array": "c",
+        "bitset": "c",
+        "initializer_list": "c",
+        "regex": "c",
+        "utility": "c",
+        "valarray": "c",
+        "chrono": "c",
+        "algorithm": "c"
+    }
+}
