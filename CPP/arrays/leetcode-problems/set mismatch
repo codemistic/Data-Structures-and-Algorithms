@@ -1,0 +1,1 @@
+this question can be done by finding xor of all numbers of array and the final result is xored with xor of all no from 1 to n.then the question become similar to finding two numbers with odd occurrences

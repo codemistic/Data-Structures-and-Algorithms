@@ -1,0 +1,22 @@
+ int gcd(int a,int b){
+        if(a==0){return b;}
+        return gcd(b%a,a);
+    }
+    bool hasGroupsSizeX(vector<int>& deck) {
+       int n=deck.size();
+        if(n==1){
+            return false;
+            }
+        unordered_map<int,int>m;
+        for(int i=0;i<n;i++){
+            m[deck[i]]++;
+        }
+        int result=1;
+    for(int i=0;i<n;i++){
+        result=m[deck[0]];
+        result=gcd(result,m[deck[i]]);
+        
+    }
+        if(result<2){return false;}
+       else{return true;}
+    }

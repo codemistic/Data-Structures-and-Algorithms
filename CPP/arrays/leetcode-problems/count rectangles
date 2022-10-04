@@ -1,0 +1,20 @@
+    vector<int> countRectangles(vector<vector<int>>& rectangles, vector<vector<int>>& points) {
+      vector<vector<int>>v(101);
+        for(int i=0;i<rectangles.size();i++){
+            v[rectangles[i][1]].push_back(rectangles[i][0]);
+        }
+        for(int i=1;i<=100;i++){
+            sort(v[i].begin(),v[i].end());
+            
+        }
+        vector<int>ans;
+        for(int i=0;i<points.size();i++){
+            int c=0;
+            for(int j=points[i][1];j<=100;j++){
+                int id=lower_bound(v[j].begin(),v[j].end(),points[i][0])-v[j].begin();
+                c+=(v[j].size()-id);
+            }
+            ans.push_back(c);
+        }
+        return ans;
+    }
