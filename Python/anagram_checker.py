@@ -7,6 +7,8 @@ def anagram_checker(s1,s2):
 
     pos = 0
     matches = True
+    if len(list1) != len(list2):
+        return False 
 
     while pos < len(s1) and matches:
         if list1[pos] == list2[pos]:
