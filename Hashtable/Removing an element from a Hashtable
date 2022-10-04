@@ -1,0 +1,27 @@
+// This program will remove a particular element from the HashTable.
+
+import java.util.*;
+class Example1 {
+  
+    public static void main(String args[])
+    {
+        // Initialization of a Hashtable
+        Map<Integer, String> map
+            = new Hashtable<Integer, String>();
+  
+        // Inserting the Elements using put method
+        map.put(1, "Apple");
+        map.put(2, "Mango");
+        map.put(3, "Orange");
+        map.put(4, "Grapes");
+  
+        // Initial HashMap
+        System.out.println("Initial map : " + map);
+  
+        // Remove the map entry with key 2
+        map.remove(2);
+  
+        // Final Hashtable
+        System.out.println("Updated map : " + map);
+    }
+}
