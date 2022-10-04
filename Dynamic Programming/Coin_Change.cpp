@@ -22,6 +22,7 @@ Examples:
 
 #include<bits/stdc++.h>
 using namespace std;
+
 int Count_Coins(int coins[],int n,int sum){
     int table[sum+1];
     memset(table,0,sizeof(table));
@@ -32,12 +33,16 @@ int Count_Coins(int coins[],int n,int sum){
             table[j]+=table[j-coins[i]];
         }
     }
+    
     return table[sum];
 }
+
 int main(){
+    
     int coins[]={1,2,3};
     int n=sizeof(coins)/sizeof(coins[0]);
     int sum=4;
     cout<<Count_Coins(coins,n,sum);
+    
     return 0;
 }
