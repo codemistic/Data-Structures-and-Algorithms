@@ -1,8 +1,7 @@
-// https://leetcode.com/problems/merge-sorted-array/
 class Solution {
 public:
     void merge(vector<int>& nums1, int m, vector<int>& nums2, int n) {
-        int h=m;
+         int h=m;
         int j=(m+n)-1;
         int i=0;
         int k=0;
