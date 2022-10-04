@@ -20,7 +20,7 @@ Steps to contribute in this repository
 <table>
 <tr>
     <td align="center" style="word-wrap: break-word; width: 200.0; height: 200.0">
-        <a href=https://linktr.ee/gantavyamalviya>
+        <a href=https://github.com/gantavyamalviya>
             <img src=https://avatars.githubusercontent.com/u/39916680?v=4 width="200;"  style="border-radius:50%;align-items:center;justify-content:center;overflow:hidden;padding-top:10px" alt=Gantavya Malviya/>
             <br />
             <sub style="font-size:14px"><b>Gantavya Malviya</b></sub>
