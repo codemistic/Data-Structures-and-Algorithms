@@ -1,0 +1,17 @@
+// link : https://leetcode.com/problems/best-time-to-buy-and-sell-stock/
+
+
+
+//space optimised
+int maxProfit(vector<int>& prices) {
+        int ma=0;
+        int ans=0;
+        int mi=prices[0];
+        int n=prices.size();
+        for(int i=1;i<n;i++){
+            ma=prices[i];
+            ans=max(ans,ma-mi);
+            mi=min(mi,prices[i]);
+        }
+      return ans;
+}
