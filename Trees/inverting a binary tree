@@ -1,0 +1,10 @@
+void invert(node*root)
+{
+    if(root!=NULL)
+    {
+        invert(root->left);
+        invert(root->right);
+        swap(root->left,root->right);
+    }
+}
+Footer

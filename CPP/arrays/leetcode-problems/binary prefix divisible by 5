@@ -1,0 +1,12 @@
+  vector<bool> prefixesDivBy5(vector<int>& nums) {
+        int n=nums.size();
+        int p=0;
+        vector<bool>v;
+        int d=2;
+        for(int i=0;i<n;i++){
+            p=(p*d+nums[i])%(10^5);
+            if((p%5)==0){v.push_back(true);}
+            else{v.push_back(false);}
+        }
+        return v;
+    }
