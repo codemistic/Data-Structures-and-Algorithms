@@ -1,0 +1,95 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+bool isSafe(int x, int y, int n, vector<vector<int>> vis, vector<vector<int>> &m)
+{
+    if ((x >= 0 and x < n) and (y >= 0 and y < n) and vis[x][y] == 0 and m[x][y] == 1)
+    {
+        return true;
+    }
+    return false;
+}
+
+void solve(vector<vector<int>> &m, int n, vector<string> &ans, int x, int y, vector<vector<int>> vis, string path)
+{
+    if (x == n - 1 and y == n - 1)
+    {
+        ans.push_back(path);
+        return;
+    }
+    vis[x][y] = 1;
+
+    int newx = x + 1, newy = y;
+    if (isSafe(newx, newy, n, vis, m))
+    {
+        path.push_back('D');
+        solve(m, n, ans, newx, newy, vis, path);
+        path.pop_back();
+    }
+
+    newx = x, newy = y - 1;
+    if (isSafe(newx, newy, n, vis, m))
+    {
+        path.push_back('L');
+        solve(m, n, ans, newx, newy, vis, path);
+        path.pop_back();
+    }
+
+    newx = x, newy = y + 1;
+    if (isSafe(newx, newy, n, vis, m))
+    {
+        path.push_back('R');
+        solve(m, n, ans, newx, newy, vis, path);
+        path.pop_back();
+    }
+
+    newx = x - 1, newy = y;
+    if (isSafe(newx, newy, n, vis, m))
+    {
+        path.push_back('U');
+        solve(m, n, ans, newx, newy, vis, path);
+        path.pop_back();
+    }
+
+    vis[x][y] = 0;
+}
+
+vector<string> findPath(vector<vector<int>> &m, int n)
+{
+    vector<string> ans;
+    if (m[0][0] == 0)
+        return ans;
+    int x = 0, y = 0;
+    vector<vector<int>> vis = m;
+    for (int i = 0; i < n; i++)
+    {
+        for (int j = 0; j < n; j++)
+            vis[i][j] = 0;
+    }
+    string path = "";
+    solve(m, n, ans, x, y, vis, path);
+    sort(ans.begin(), ans.end());
+    return ans;
+}
+
+int main()
+{
+    int n;
+    cin >> n;
+    vector<vector<int>> a(n, vector<int>(n, 0));
+    for (int i = 0; i < n; i++)
+    {
+        for (int j = 0; j < n; j++)
+        {
+            cin >> a[i][j];
+        }
+    }
+    vector<string> ans = findPath(a, n);
+    for (auto i : ans)
+    {
+        cout << i << endl;
+    }
+    return 0;
+}
+
+// by YASH GAUTAM
