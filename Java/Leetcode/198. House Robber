@@ -1,0 +1,21 @@
+class Solution {
+    public static int max(int []arr,int idx,int []dp){
+        if(idx>=arr.length){
+            return 0;
+        }
+        if(dp[idx]!=-1){
+            return dp[idx];
+        }
+        int a=arr[idx]+max(arr,idx+2,dp);
+        int b=max(arr,idx+1,dp);
+        
+        return dp[idx]=Math.max(a,b);
+    }
+    public int rob(int[] nums) {
+        int []dp=new int[nums.length];
+        for(int i=0;i<nums.length;i++){
+            dp[i]=-1;
+        }
+        return max(nums,0,dp);
+    }
+}
