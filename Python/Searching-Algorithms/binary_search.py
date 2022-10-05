@@ -6,7 +6,7 @@ class Solution:
 
         while low <= high:
 
-            mid = (high + low) // 2
+            mid = low + (high - low) // 2
 
             # If x is greater, ignore left half
             if nums[mid] < target:
