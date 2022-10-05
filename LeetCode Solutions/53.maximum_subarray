@@ -1,0 +1,19 @@
+class Solution {
+public:
+    int maxSubArray(vector<int>& nums) {
+        int max_ending_here = 0, max_so_far = INT_MIN;
+        for(int i = 0;i<nums.size();i++) {
+            max_ending_here += nums[i];
+            if(max_so_far < max_ending_here) {
+                max_so_far = max_ending_here;
+            }
+            if(max_ending_here < 0) {
+                max_ending_here = 0;
+            }
+        }
+        return max_so_far;
+    }
+};
+
+// This algorithm is based on Kadane's algorithm which uses O(n) time complexity and O(1) space
+// read more about it on: https://www.geeksforgeeks.org/largest-sum-contiguous-subarray/
