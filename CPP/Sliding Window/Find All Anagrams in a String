@@ -1,0 +1,29 @@
+class Solution
+{
+    public:
+        vector<int> findAnagrams(string s, string p)
+        {
+            if (s.length() < p.length()) return {};
+            vector<int> ans;
+            vector<int> a(26, 0);
+            vector<int> b(26, 0);
+            int j = 0;
+            while (j < p.size())
+            {
+                a[p[j] - 'a']++;
+                b[s[j] - 'a']++;
+                j++;
+            }
+            int n = p.size();
+            j--;
+            while (j < s.size())
+            {
+                if (a == b) ans.push_back(j - n + 1);
+                j++;
+                if (!s[j]) break;
+                b[s[j - n] - 'a']--;
+                b[s[j] - 'a']++;
+            }
+            return ans;
+        }
+};

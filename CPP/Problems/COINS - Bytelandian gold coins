@@ -1,0 +1,21 @@
+#include <bits/stdc++.h>
+using namespace std;
+unordered_map <int, long long> umap;
+long long coin(int n){
+    if (!n) return 0;
+    if (umap[n]) return umap[n];
+    long long sum = coin(n/2)+coin(n/3)+coin(n/4);
+    if (n>sum) umap[n]=n;
+    else umap[n] = sum;
+    return umap[n];
+}
+int main() {
+    while (true){
+        int n=-1;
+        cin>>n;
+        if (n==-1) break;
+        long long ans = coin(n);
+        cout<<ans<<endl;
+    }
+    return 0;
+}

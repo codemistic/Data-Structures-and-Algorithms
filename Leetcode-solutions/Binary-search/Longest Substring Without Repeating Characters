@@ -1,0 +1,26 @@
+class Solution {
+public:
+    int lengthOfLongestSubstring(string str) {
+        int n = str.size();
+        map<char, int> mp;
+        int maxm = 0, prev = -1;
+        
+        for (int i = 0; i < n; i++)
+        {
+            if (mp.count(str[i]) == 0)
+            {
+                mp.insert({str[i], i});
+            }
+            else
+            {
+                prev = max(prev, mp[str[i]]);
+                mp[str[i]] = i;
+            }
+            maxm = max(maxm, i - prev);
+        }
+        return maxm;
+    }
+};
+
+// The idea is checking whenever we find any letter which is repeating we can find previous position and find the diffrence
+// we can check "repeating" by maintain hash functions like map
