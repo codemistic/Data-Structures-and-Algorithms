@@ -1,0 +1,125 @@
+ 1.   while(s < e).. (isme s=m+1 hi hoga e = m hi hoga) wale mai condition met krne ka mtlb h ki ok this can be my ans but ho skta h aage
+    isse bhi bde h or agr aage condition met kr gyi to obviously wo max hoga to condition met krne pr
+    s=m+1 ab agr tum socho ki kyu bhai m+1 kyu m kyu nhi kyunki ye ho skta hna ans, pr dekho BS mai end
+    mai do elements bch jate h or s hi m hota h or agr whi ans bhi hua to condition met krne pr agr humne
+    s = m kiya to wo usi ko assign hota rhega or it will result in infinite loop so s = m+1 krna h
+
+    ab jb s= m+1 krre h to jb last condition jahan bhi met kri hogi vo konsa index hoga s-1 firse pdho
+    smjh aa jaega to isliye max humesha s-1 pr hoga
+
+    pr ek cheez h jse maano neeche btaya hua h sqrt mai agr n 1 hua to, use pdhlena smjh aa jaega pr
+    bta du to return krna h is tarike se ki
+
+    agr s satisfy krra h to s nhi to s-1 or agr s krra hoga to common sense se btao s bda ki s-1 ?
+    s hi na or hume krna kya h max return krna h to isliye s return krdo nhi to s-1;
+
+    while(s < e){
+        m = s + (e-s)/2;
+
+        if( condition(m) ){
+            s = m +1;
+        } else{
+            e = m;
+        }
+    }
+    return condition(s) ? s : s-1;
+
+    or min chahiye to
+
+    while(s < e){
+        m = s + (e-s)/2;
+
+        if( condition(m) ){
+            e = m;
+        } else{
+            s = m+1;
+        }
+    }
+    return condition(s) ? s : s+1;
+    //ye cheez agge smjhayi h dursi dikkat krke or search insert position mai bhi h whan dekhlo
+
+
+ 2.   while(s <= e).. (isme humesha s = m+1 or e = m-1 hi hoga) wale case mai kya hoga pehle mai kya tha
+    ki last mai s or e ek pr hi point krenge pr isme aisa nhi h ye apna traditional wala h isme simple poora
+    ka poora array traverse krenge or end mai simple hoga ki s point krega smallest pe or e krega biggest pe
+    kyu kyunki isme condition met krne pe max chaiye to hum kya krre h whi upr wali cheez or isme to sochne ka
+    kuch h nhi hume simple s = m+1 or e = m-1 krna h to end mai usme to kya hota tha do elemnt bchte the or jse
+    hi s or e ek pr point krte the hum break kr dete the pr isme last mai ek bchega or hum use bhi compare krenge
+    or fir agr whan pr met kri or hum max dhoond re h to kya krenge s = m+1 or yhi pr kya hoga ki meri baat
+    dhyaan se suno end mai isme ek element bchega or usko bhi compare kiya jaega abhi mai max ka bta rhi hu
+    agr condition met kri to kya h iska mtlb ki ye h humara ans or kya hoga ki s = m+1 ho jaega kyunki hum
+    or dekhne ki koshish krenge fir condition break ho jaegi kyunki s bda ho jaega e se or dhyaan se dekho
+    e kahan point krra h max element that is satisfying our condition or agr ye ans nhi tha to kon hoga
+    khud socho kya hua hoga do elemnts bche hinge pehle wala hi m bna hoga ab wo tha to humne kya kiya s=m+1
+    ki dekhte h agge ho to or agr ab hum wahan h or wo nhi h to kya hoga max dhond re h or condition met
+    nhi kri to simple e = m-1 or is time m s or e k pr hi h ok, to ab kya hoga ki e = m-1 kyunki ye met
+    nhi krra last wala krra tha to jb e =m-1 hoga to wo whin pohoch jaega jo ans tha or loop bhi break ho
+    jaega kyunki s bda ho jaega or try to analyze e hi point krega max ko or s krega min ko isse yaad krlo
+    s se smallest or baaki bcha biggest to wo e hi hoga bss bss
+
+    while(s <= e ){
+        m = s + (e-s)/2;
+
+        if( condition() ){
+            s = m+1;
+        } else{
+            e = m-1;
+        }
+    }
+    return e;   simple!
+
+    or min ya smallest x nikalna h is traditional method se to bss
+
+    while(s <= e){
+         m = s + (e-s)/2;
+
+         if( condition() ){
+            e = m-1;     //ok this is can be our ans but we're finding smallest one or isse bhi chhote khan
+                           peeche na or peeche kse jaenge e = m-1
+         } else{
+            s= m+1;
+         }
+    }
+    return s; simple!
+
+
+
+dekho jb aisa hna ki yhi find krna or agr ye nhi h to -1 return krna h to bss simple wala jo
+ h apna binary search vo hi lga do
+
+or achha binary search ye pta hna sorted arrays ke alava range main itna mst kaam krta h ya fir
+ kuch aisa hota hna ki jse ship capacity jsa question wahan bhi range nikalo or bs
+
+ab jo humara purana wala tarika hna wo bhi kr kisi mai lg jata h or end main kya hota h ki s point krega
+ smallest x pe or e humesha point krega greatest x pr
+
+pehle wale case main jo purana wala hi h usme koi dikkat nhi aati but second wale mai h thodi si dekhte h
+ vo
+
+dusre mai simple hota h ki in the end both s and e will point to the same element and that will be the
+smallest x and the greatest x will be s-1 why beacuse when given condition met in the ques in which we're
+finding max we just do s= m+1.
+
+dikkat aati h kyunki hum s < e tk chec krte h to jb hume max chahiye hota h to humara ans humesha
+kahan hota h s-1 kyu kyunki condition met hone pr hum hi to krte h s= m+1 to to max num that is
+satisfying our condition will be what s-1 but lets consider a ex if in sqrt que what we're doing
+finding the max num satisfying our condition pr maano n ho 1 to s to hota hi 1 h or e bhi 1 ho
+jaega to is 1 < 1 no so the loop will not run or hum s-1 kse return kr skte h fir to isliye pehle check
+kro s se ki kya s satisfy krra h agr krra h to vo to bda hi h s-1 se or mujhe chahiye kya max to just
+return it pr agr wo satisf nhi krra to return s-1;
+
+or dursi dikkat aati h jb hum min find krte h tb kya hota h ki agr satisfy krta  to hum e = m krte
+h nhi to s = m+1 ab isme koi dikkat wse to nhi aati pr maano jse insert position ya fir ceiling of a
+number thik h to isme kya krna hota h smallest num >= target pr maano arr ka max elememt hi target se
+chhota ho to? end mai s or e dono last element pr hi point krenge kyu kyunki is ques mai hum kya krre
+h smallest nikal re h to condition met pr kya krte h e=m
+or nhi hoti to krte h s= m+1 to bss jb koi element h hi nhi bda ya barabar target ke to sirf s = m+1 hi
+hota rhega or end mai wo dono last elemnt pe aa jaenge wse to mostly ho jata h pr idhr ye bhi nhi h ans
+to isliye return krne se pehle dekhlo ki ye jo s bhi h wo bhi h ki nhi agr wo nhi h to ya to
+ques mai given hota h ki agr nhi h to -1 return kro, nhi to s +1 kyunki is case mai agr target max element se
+bda h or ye sorted h to max kahan hoga last index pe or target usse bhi bda h to vo kahan hoga usse aage
+or s se aage kya h s+1
+
+
+
+baaki bss practice kro everything is just a pattern!

@@ -6,10 +6,10 @@ n! = n*(n-1)*...*1
 
 '''
 def fact(n):
-  if n==1:
-    return 1
-  else:
-    return n*fact(n-1)
+  ans = 1
+  for i in range(2, n+1):
+    ans *= i
+  return ans
 n=int(input("Enter the number "))
 f=fact(n)
 print("Factorial of {} is {}".format(n,f))

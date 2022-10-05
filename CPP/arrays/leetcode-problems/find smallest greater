@@ -1,0 +1,29 @@
+  char nextGreatestLetter(vector<char>& letters, char target) {
+        if (letters.back() <= target) return letters.front();
+        int low = 0, high = letters.size() - 1;
+        while (low < high) {
+            auto mid = (low + high) / 2;
+            if (target < letters[mid]) high = mid;
+            else low = mid + 1;
+        }
+        return letters[low];
+    }
+    method 2
+        char nextGreatestLetter(vector<char>& letters, char target) {
+           int n=letters.size();
+        if(target>letters[n-1]||target<letters[0]||(target==letters[n-1])){return letters[0];}
+     
+        int l=0;
+        int h=n-1;
+        char ans=' ';
+        while(l<=h){
+            int mid=(l+h)/2;
+            if(letters[mid]>target){
+                ans=letters[mid];
+                h=mid-1;
+            }
+            else{l=mid+1;}
+        }
+        
+        return ans;
+    }
