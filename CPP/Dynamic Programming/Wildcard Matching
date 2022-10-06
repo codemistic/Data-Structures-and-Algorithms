@@ -1,0 +1,48 @@
+class Solution {
+public:
+
+bool solve(string& s,string& p,int i,int j,vector<vector<int>>& dp)
+{
+    
+    //Base cases
+    if(i<0 && j<0)   //If both exhausted
+        return true ;
+    
+    if(i>=0 && j<0)   //If pattern exhausted but string still remains
+       return false ;
+    
+    if(i<0 && j>=0)  //If string exhausted but pattern remains
+    {
+        for(int k=0;k<=j;k++)
+        {
+            if(p[k]!='*')
+                return false ;
+        }
+        return true ;       //Only return s true if there is *, else false
+    }
+    
+    if(dp[i][j]!=-1)
+        return dp[i][j] ;
+    
+    
+    //Matches
+    if(s[i]==p[j] || p[j]=='?')    
+        return dp[i][j]=solve(s,p,i-1,j-1,dp) ;
+    
+    else if(p[j]=='*')   //Solve for 2 cases ignore * || include * 
+    {
+        return dp[i][j]=(solve(s,p,i-1,j,dp) || solve(s,p,i,j-1,dp)) ;
+    }
+    else
+        return false ;
+}
+bool isMatch(string s, string p) {
+    
+    
+    int i=s.length(),j=p.length() ;
+    vector<vector<int>> dp(i,vector<int>(j,-1)) ;
+   
+    return solve(s,p,i-1,j-1,dp) ;
+    
+}
+};
