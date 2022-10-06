@@ -1,24 +1,29 @@
-public class HIndex {
-    public static void main(String[] args) {
-        int[] citations = {1,2,100};
-        System.out.println(hIndex(citations));
-    }
+//link - https://leetcode.com/problems/h-index/
 
-    static int hIndex(int[] citations) {
-        int s = 0;
-        int e = citations.length-1;
 
-        while(s <= e){
-            int m = s + (e-s)/2;
-
-            if(citations[m] >= (citations.length - m) ){
-                e = m-1;
-            }
-            else{
-                s = m+1;
-            }
+class Solution {
+    
+        
+   public int hIndex(int[] citations) {
+    int n = citations.length;
+    int[] buckets = new int[n+1];
+    for(int c : citations) {
+        if(c >= n) {
+            buckets[n]++;
+        } else {
+            buckets[c]++;
         }
-        return citations.length - s;
     }
+    int count = 0;
+    for(int i = n; i >= 0; i--) {
+        count += buckets[i];
+        if(count >= i) {
+            return i;
+        }
+    }
+    return 0;
+}
 
+
+    
 }
