@@ -32,8 +32,9 @@ Steps to contribute in this repository
 </tr>
 </table>
    
-## Top Contributors
-Update in progress....
+### Contributors
+
+
 <!-- <table>
 <tr>
     <td align="center" style="word-wrap: break-word; width: 150.0; height: 150.0">
