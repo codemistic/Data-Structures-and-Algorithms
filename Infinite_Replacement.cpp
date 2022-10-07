@@ -1,3 +1,5 @@
+//Infinite Replacement Codeforces
+
 #define ll long long int
 #define sc ;
 #define tc ll t sc cin>>t sc while (t--)
