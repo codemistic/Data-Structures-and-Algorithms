@@ -1,0 +1,85 @@
+// { Driver Code Starts
+// C++ implementation to convert infix expression to postfix
+#include <bits/stdc++.h>
+using namespace std;
+
+
+ // } Driver Code Ends
+class Solution {
+  public:
+    // Function to convert an infix expression to a postfix expression.
+    int pre(char ch)
+    {
+         switch(ch)
+         {
+             case '+':
+             case '-':return 1;
+                      break;
+             case '*':
+             case '/':
+             case '%': return 2;
+                        break;
+            case '^': return 3;
+                      break;
+            default: return -1;
+                     break;
+         }
+    }
+    string infixToPostfix(string s) 
+    {
+        stack <char> st;
+        string pofx;
+        for(int i=0;i<s.length();i++)
+        {
+            if(s[i]=='(')
+            {
+                st.push(s[i]);
+            }
+            else if(isalnum(s[i]))
+            {
+                pofx+=s[i];
+            }
+            else if(s[i]==')')
+            {
+                while(st.top()!='(')
+                {
+                    pofx+=st.top();
+                    st.pop();
+                }
+                st.pop();
+            }
+            else
+            {
+                while(st.size()!=0&&pre(s[i])<=pre(st.top()))
+                {
+                    pofx+=st.top();
+                    st.pop();
+                }
+                st.push(s[i]);
+            }
+        }
+        while( st.size()!=0)
+            {
+                pofx+=st.top();
+                st.pop();
+            }
+        return pofx;
+    }
+};
+
+
+// { Driver Code Starts.
+// Driver program to test above functions
+int main() {
+    int t;
+    cin >> t;
+    cin.ignore(INT_MAX, '\n');
+    while (t--) {
+        string exp;
+        cin >> exp;
+        Solution ob;
+        cout << ob.infixToPostfix(exp) << endl;
+    }
+    return 0;
+}
+  // } Driver Code Ends
