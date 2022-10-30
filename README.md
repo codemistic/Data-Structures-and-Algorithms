@@ -1,4 +1,3 @@
-## This repository is no longer a part of Hacktoberfest 2022
 <h1 align="centre">
     <b>Data Structures and Algorithms</b>
 </h1>
