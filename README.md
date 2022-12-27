@@ -371,9 +371,9 @@ Steps to contribute in this repository
     </td>
     <td align="center" style="word-wrap: break-word; width: 150.0; height: 150.0">
         <a href=https://github.com/DharmaWarrior>
-            <img src=https://avatars.githubusercontent.com/u/97218268?v=4 width="100;"  style="border-radius:50%;align-items:center;justify-content:center;overflow:hidden;padding-top:10px" alt=DharmaWarrior/>
+            <img src=https://avatars.githubusercontent.com/u/97218268?v=4 width="100;"  style="border-radius:50%;align-items:center;justify-content:center;overflow:hidden;padding-top:10px" alt=Saar Agrawal/>
             <br />
-            <sub style="font-size:14px"><b>DharmaWarrior</b></sub>
+            <sub style="font-size:14px"><b>Saar Agrawal</b></sub>
         </a>
     </td>
     <td align="center" style="word-wrap: break-word; width: 150.0; height: 150.0">
@@ -641,7 +641,7 @@ Steps to contribute in this repository
         </a>
     </td>
     <td align="center" style="word-wrap: break-word; width: 150.0; height: 150.0">
-        <a href=https://github.com/Sanjay-S17>
+        <a href=https://github.com/sanjaysathyanarayanan17>
             <img src=https://avatars.githubusercontent.com/u/97724234?v=4 width="100;"  style="border-radius:50%;align-items:center;justify-content:center;overflow:hidden;padding-top:10px" alt=Sanjay Sathyanarayanan/>
             <br />
             <sub style="font-size:14px"><b>Sanjay Sathyanarayanan</b></sub>
