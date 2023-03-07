@@ -1404,9 +1404,9 @@ Steps to contribute in this repository
     </td>
     <td align="center" style="word-wrap: break-word; width: 150.0; height: 150.0">
         <a href=https://github.com/zahyaah>
-            <img src=https://avatars.githubusercontent.com/u/72253920?v=4 width="100;"  style="border-radius:50%;align-items:center;justify-content:center;overflow:hidden;padding-top:10px" alt=K Zayd Ahmed/>
+            <img src=https://avatars.githubusercontent.com/u/72253920?v=4 width="100;"  style="border-radius:50%;align-items:center;justify-content:center;overflow:hidden;padding-top:10px" alt=Zayd/>
             <br />
-            <sub style="font-size:14px"><b>K Zayd Ahmed</b></sub>
+            <sub style="font-size:14px"><b>Zayd</b></sub>
         </a>
     </td>
 </tr>
@@ -1609,7 +1609,7 @@ Steps to contribute in this repository
         </a>
     </td>
     <td align="center" style="word-wrap: break-word; width: 150.0; height: 150.0">
-        <a href=https://github.com/0901IT201046>
+        <a href=https://github.com/rahulsg98>
             <img src=https://avatars.githubusercontent.com/u/78016968?v=4 width="100;"  style="border-radius:50%;align-items:center;justify-content:center;overflow:hidden;padding-top:10px" alt=Rahul Singh Gurjar/>
             <br />
             <sub style="font-size:14px"><b>Rahul Singh Gurjar</b></sub>
