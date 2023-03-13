@@ -1977,9 +1977,9 @@ Steps to contribute in this repository
     </td>
     <td align="center" style="word-wrap: break-word; width: 150.0; height: 150.0">
         <a href=https://github.com/bhavy007>
-            <img src=https://avatars.githubusercontent.com/u/44473716?v=4 width="100;"  style="border-radius:50%;align-items:center;justify-content:center;overflow:hidden;padding-top:10px" alt=bhavy007/>
+            <img src=https://avatars.githubusercontent.com/u/44473716?v=4 width="100;"  style="border-radius:50%;align-items:center;justify-content:center;overflow:hidden;padding-top:10px" alt=Bhavy Khatter/>
             <br />
-            <sub style="font-size:14px"><b>bhavy007</b></sub>
+            <sub style="font-size:14px"><b>Bhavy Khatter</b></sub>
         </a>
     </td>
 </tr>
