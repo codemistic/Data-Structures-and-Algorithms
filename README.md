@@ -209,7 +209,7 @@ Steps to contribute in this repository
         </a>
     </td>
     <td align="center" style="word-wrap: break-word; width: 150.0; height: 150.0">
-        <a href=https://github.com/baibhav-tiwari>
+        <a href=https://github.com/BaibhavTiwari>
             <img src=https://avatars.githubusercontent.com/u/75496387?v=4 width="100;"  style="border-radius:50%;align-items:center;justify-content:center;overflow:hidden;padding-top:10px" alt=Baibhav Tiwari/>
             <br />
             <sub style="font-size:14px"><b>Baibhav Tiwari</b></sub>
@@ -1354,9 +1354,9 @@ Steps to contribute in this repository
     </td>
     <td align="center" style="word-wrap: break-word; width: 150.0; height: 150.0">
         <a href=https://github.com/firejoust>
-            <img src=https://avatars.githubusercontent.com/u/42525540?v=4 width="100;"  style="border-radius:50%;align-items:center;justify-content:center;overflow:hidden;padding-top:10px" alt=Firejoust/>
+            <img src=https://avatars.githubusercontent.com/u/42525540?v=4 width="100;"  style="border-radius:50%;align-items:center;justify-content:center;overflow:hidden;padding-top:10px" alt=firejoust/>
             <br />
-            <sub style="font-size:14px"><b>Firejoust</b></sub>
+            <sub style="font-size:14px"><b>firejoust</b></sub>
         </a>
     </td>
     <td align="center" style="word-wrap: break-word; width: 150.0; height: 150.0">
