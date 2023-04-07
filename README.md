@@ -886,9 +886,9 @@ Steps to contribute in this repository
 <tr>
     <td align="center" style="word-wrap: break-word; width: 150.0; height: 150.0">
         <a href=https://github.com/shreyan-haldankar>
-            <img src=https://avatars.githubusercontent.com/u/88901329?v=4 width="100;"  style="border-radius:50%;align-items:center;justify-content:center;overflow:hidden;padding-top:10px" alt=Shreyan />
+            <img src=https://avatars.githubusercontent.com/u/88901329?v=4 width="100;"  style="border-radius:50%;align-items:center;justify-content:center;overflow:hidden;padding-top:10px" alt=Shreyan/>
             <br />
-            <sub style="font-size:14px"><b>Shreyan </b></sub>
+            <sub style="font-size:14px"><b>Shreyan</b></sub>
         </a>
     </td>
     <td align="center" style="word-wrap: break-word; width: 150.0; height: 150.0">
