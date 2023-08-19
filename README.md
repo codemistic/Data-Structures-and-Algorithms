@@ -782,9 +782,9 @@ Steps to contribute in this repository
     </td>
     <td align="center" style="word-wrap: break-word; width: 150.0; height: 150.0">
         <a href=https://github.com/aswindevsp>
-            <img src=https://avatars.githubusercontent.com/u/40211325?v=4 width="100;"  style="border-radius:50%;align-items:center;justify-content:center;overflow:hidden;padding-top:10px" alt=Aswin  Dev SP/>
+            <img src=https://avatars.githubusercontent.com/u/40211325?v=4 width="100;"  style="border-radius:50%;align-items:center;justify-content:center;overflow:hidden;padding-top:10px" alt=Aswin  Dev S P/>
             <br />
-            <sub style="font-size:14px"><b>Aswin  Dev SP</b></sub>
+            <sub style="font-size:14px"><b>Aswin  Dev S P</b></sub>
         </a>
     </td>
     <td align="center" style="word-wrap: break-word; width: 150.0; height: 150.0">
