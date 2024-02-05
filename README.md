@@ -276,7 +276,7 @@ Steps to contribute in this repository
         </a>
     </td>
     <td align="center" style="word-wrap: break-word; width: 150.0; height: 150.0">
-        <a href=https://github.com/cyborg-T5>
+        <a href=https://github.com/HeeManSu>
             <img src=https://avatars.githubusercontent.com/u/97340980?v=4 width="100;"  style="border-radius:50%;align-items:center;justify-content:center;overflow:hidden;padding-top:10px" alt=Himanshu Kumar Sharma/>
             <br />
             <sub style="font-size:14px"><b>Himanshu Kumar Sharma</b></sub>
@@ -1574,9 +1574,9 @@ Steps to contribute in this repository
     </td>
     <td align="center" style="word-wrap: break-word; width: 150.0; height: 150.0">
         <a href=https://github.com/kshitij9896>
-            <img src=https://avatars.githubusercontent.com/u/63043352?v=4 width="100;"  style="border-radius:50%;align-items:center;justify-content:center;overflow:hidden;padding-top:10px" alt=@kshitij7/>
+            <img src=https://avatars.githubusercontent.com/u/63043352?v=4 width="100;"  style="border-radius:50%;align-items:center;justify-content:center;overflow:hidden;padding-top:10px" alt=@devkshitij7/>
             <br />
-            <sub style="font-size:14px"><b>@kshitij7</b></sub>
+            <sub style="font-size:14px"><b>@devkshitij7</b></sub>
         </a>
     </td>
     <td align="center" style="word-wrap: break-word; width: 150.0; height: 150.0">
