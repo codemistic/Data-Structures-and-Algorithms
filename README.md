@@ -974,9 +974,9 @@ Steps to contribute in this repository
 <tr>
     <td align="center" style="word-wrap: break-word; width: 150.0; height: 150.0">
         <a href=https://github.com/lokesh-7977>
-            <img src=https://avatars.githubusercontent.com/u/73935267?v=4 width="100;"  style="border-radius:50%;align-items:center;justify-content:center;overflow:hidden;padding-top:10px" alt=Lokesh Medharametla/>
+            <img src=https://avatars.githubusercontent.com/u/73935267?v=4 width="100;"  style="border-radius:50%;align-items:center;justify-content:center;overflow:hidden;padding-top:10px" alt=Lokesh Medharimetla/>
             <br />
-            <sub style="font-size:14px"><b>Lokesh Medharametla</b></sub>
+            <sub style="font-size:14px"><b>Lokesh Medharimetla</b></sub>
         </a>
     </td>
     <td align="center" style="word-wrap: break-word; width: 150.0; height: 150.0">
