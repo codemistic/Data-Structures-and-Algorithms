@@ -253,9 +253,9 @@ Steps to contribute in this repository
     </td>
     <td align="center" style="word-wrap: break-word; width: 150.0; height: 150.0">
         <a href=https://github.com/Saket109>
-            <img src=https://avatars.githubusercontent.com/u/96969714?v=4 width="100;"  style="border-radius:50%;align-items:center;justify-content:center;overflow:hidden;padding-top:10px" alt=Saket Ahlawat/>
+            <img src=https://avatars.githubusercontent.com/u/96969714?v=4 width="100;"  style="border-radius:50%;align-items:center;justify-content:center;overflow:hidden;padding-top:10px" alt=Github_User/>
             <br />
-            <sub style="font-size:14px"><b>Saket Ahlawat</b></sub>
+            <sub style="font-size:14px"><b>Github_User</b></sub>
         </a>
     </td>
     <td align="center" style="word-wrap: break-word; width: 150.0; height: 150.0">
@@ -1441,9 +1441,9 @@ Steps to contribute in this repository
     </td>
     <td align="center" style="word-wrap: break-word; width: 150.0; height: 150.0">
         <a href=https://github.com/xoxo16>
-            <img src=https://avatars.githubusercontent.com/u/92911893?v=4 width="100;"  style="border-radius:50%;align-items:center;justify-content:center;overflow:hidden;padding-top:10px" alt=xoxo16/>
+            <img src=https://avatars.githubusercontent.com/u/92911893?v=4 width="100;"  style="border-radius:50%;align-items:center;justify-content:center;overflow:hidden;padding-top:10px" alt=ridhi16/>
             <br />
-            <sub style="font-size:14px"><b>xoxo16</b></sub>
+            <sub style="font-size:14px"><b>ridhi16</b></sub>
         </a>
     </td>
     <td align="center" style="word-wrap: break-word; width: 150.0; height: 150.0">
