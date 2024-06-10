@@ -1163,7 +1163,7 @@ Steps to contribute in this repository
         </a>
     </td>
     <td align="center" style="word-wrap: break-word; width: 150.0; height: 150.0">
-        <a href=https://github.com/VandanaSingh52>
+        <a href=https://github.com/vandanasingh52>
             <img src=https://avatars.githubusercontent.com/u/78633940?v=4 width="100;"  style="border-radius:50%;align-items:center;justify-content:center;overflow:hidden;padding-top:10px" alt=Vandana Singh/>
             <br />
             <sub style="font-size:14px"><b>Vandana Singh</b></sub>
