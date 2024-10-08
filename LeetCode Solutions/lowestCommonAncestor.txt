@@ -1,0 +1,31 @@
+Problem Link - https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-search-tree/
+/**
+ * Definition for a binary tree node.
+ * struct TreeNode {
+ *     int val;
+ *     TreeNode *left;
+ *     TreeNode *right;
+ *     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
+ * };
+ */
+
+class Solution {
+public:
+    TreeNode* lca(TreeNode* root,int l,int r){
+        if(((l<(root->val)) and (r>(root->val))) or ((l>(root->val)) and (r<(root->val)))){
+            return root;
+        }
+        else if((root->val==l) or (root->val==r)){
+            return root;
+        }
+        else if(((root->val)>l) and ((root->val)>r)){
+            return lca(root->left,l,r);
+        }
+        return lca(root->right,l,r);
+      
+        
+    }
+    TreeNode* lowestCommonAncestor(TreeNode* root, TreeNode* p, TreeNode* q) {
+        return lca(root,p->val,q->val);
+    }
+};

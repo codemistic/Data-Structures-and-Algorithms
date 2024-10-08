@@ -1,0 +1,42 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+const vector<string> pad = {
+    "", "", "abc", "def", "ghi", "jkl",
+    "mno", "pqrs", "tuv", "wxyz"};
+
+vector<string> letterCombinations(string digits)
+{
+    if (digits.empty())
+        return {};
+    vector<string> result;
+    result.push_back("");
+
+    for (auto digit : digits)
+    {
+        vector<string> tmp;
+        for (auto candidate : pad[digit - '0'])
+        {
+            for (auto s : result)
+            {
+                tmp.push_back(s + candidate);
+            }
+        }
+        result.swap(tmp);
+    }
+    return result;
+}
+
+int main()
+{
+    string s;
+    cin >> s;
+    vector<string> ans = letterCombinations(s);
+    for (auto i : ans)
+    {
+        cout << i << " ";
+    }
+    return 0;
+}
+
+// by YASH GAUTAM

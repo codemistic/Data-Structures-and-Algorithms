@@ -1,0 +1,36 @@
+    int maximumWhiteTiles(vector<vector<int>>& tiles, int carpetLen) {
+       vector<int>start;
+        vector<int>end;
+        int n=tiles.size();
+        for(int i=0;i<tiles.size();i++){
+            start.push_back(tiles[i][0]);
+            end.push_back(tiles[i][1]);
+        }
+        sort(start.begin(),start.end());
+          sort(end.begin(),end.end());
+        int prefix[n];
+        int total=0;
+        for(int i=0;i<start.size();i++){
+            total+=(end[i]-start[i]+1);
+            prefix[i]=total;
+        }
+        int ans=0;
+        for(int i=0;i<start.size();i++){
+            int last=start[i]+carpetLen-1;
+            if(end[n-1]<=last){
+                int curr=prefix[n-1];
+                if(i>0){curr-=prefix[i-1];}
+                ans=max(ans,curr);
+            }
+            else{
+                int pos=upper_bound(end.begin(),end.end(),last)-end.begin();
+                int curr=prefix[pos-1];
+                if(i>0){curr-=prefix[i-1];}
+                if(last>=start[pos]){
+                    curr+=last-start[pos]+1;
+                }
+                ans=max(ans,curr);
+            }
+        }
+        return ans;
+    }

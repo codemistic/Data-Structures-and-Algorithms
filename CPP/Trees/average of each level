@@ -1,0 +1,31 @@
+vector<double> averageOfLevels(TreeNode* root) 
+    {
+        vector<double>v;
+        double sum=0;
+        double count=0;
+        queue<TreeNode*>q;
+        q.push(root);
+        while(q.empty()==false)
+        {
+            int size=q.size();
+            count=size;
+            sum=0;
+            for(int i=0;i<size;i++)
+           {
+                TreeNode*curr=q.front();
+                sum=sum+curr->val;
+                 q.pop();
+             if(curr->left!=NULL)
+              {
+                q.push(curr->left);
+              }
+              if(curr->right!=NULL)
+              {
+                q.push(curr->right);
+               }
+          } 
+           v.push_back(sum/count); 
+        }
+        return v;
+    }
+};

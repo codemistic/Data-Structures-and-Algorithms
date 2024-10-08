@@ -4,14 +4,9 @@ import java.util.*;
 class AddElementsToHashtable {
     public static void main(String args[])
     {
-        // No need to mention the
-        // Generic type twice
-        Hashtable<Integer, String> ht1 = new Hashtable<>();
-  
         // Initialization of a Hashtable
         // using Generics
-        Hashtable<Integer, String> ht2
-            = new Hashtable<Integer, String>();
+        Hashtable<Integer, String> ht1 = new Hashtable<>(), ht2 = new Hashtable<>();
   
         // Inserting the Elements
           // using put() method

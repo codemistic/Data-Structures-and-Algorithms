@@ -1,0 +1,19 @@
+#include<iostream>
+using namespace std;
+int main(){
+    int lastDigit,sum=0,n;
+    cin>>n;
+    int original_n =n;
+
+    while(n>0){
+        lastDigit=n%10;
+        sum = sum + lastDigit*lastDigit*lastDigit;
+        n=n/10;
+    }
+    if(sum==original_n){
+        cout<<"Armstrong Number";
+    }else{
+        cout<<"Not an Armstrong Number";
+
+    }
+}
