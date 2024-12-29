@@ -578,9 +578,9 @@ Steps to contribute in this repository
 <tr>
     <td align="center" style="word-wrap: break-word; width: 150.0; height: 150.0">
         <a href=https://github.com/Saurav-Navdhare>
-            <img src=https://avatars.githubusercontent.com/u/47005884?v=4 width="100;"  style="border-radius:50%;align-items:center;justify-content:center;overflow:hidden;padding-top:10px" alt=Navdhare Saurav Rajendra/>
+            <img src=https://avatars.githubusercontent.com/u/47005884?v=4 width="100;"  style="border-radius:50%;align-items:center;justify-content:center;overflow:hidden;padding-top:10px" alt=Saurav Navdhare/>
             <br />
-            <sub style="font-size:14px"><b>Navdhare Saurav Rajendra</b></sub>
+            <sub style="font-size:14px"><b>Saurav Navdhare</b></sub>
         </a>
     </td>
     <td align="center" style="word-wrap: break-word; width: 150.0; height: 150.0">
