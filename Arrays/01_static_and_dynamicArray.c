@@ -1,25 +1,48 @@
 #include <stdio.h>
 #include <stdlib.h>
+
+// Define a constant for array size
+#define ARRAY_SIZE 5
+
 int main()
 {
-	int A[5] = { 1,2,3,4,5 }; // this is allocated inside stack memory 
-	int* p; // pointer of array
-	int i;
-	p = (int*)malloc(5 * sizeof(int)); // dynamically createing array inside heap 
-	p[0] = 1; // initializing all the terms in array
-	p[1] = 2;
-	p[2] = 3;
-	p[3] = 4;
-	p[4] = 5;
+    // Static array allocated on the stack
+    int A[ARRAY_SIZE] = {1, 2, 3, 4, 5};
+    int* p; // Pointer for dynamically allocated array
+    int i;
 
-	for (i = 0; i < 5; i++) // iteration for normal array 
-	{
-		printf("%d ", A[i]);
-	}
-	printf("\n");
- 	for (i = 0; i < 5; i++) // iteration for the dynamic array 
-	{
-		printf("%d ",p[i]);
-	}
-	return 0;
+    // Dynamically create an array on the heap
+    p = (int*)malloc(ARRAY_SIZE * sizeof(int));
+    if (p == NULL) // Check if malloc was successful
+    {
+        printf("Memory allocation failed!\n");
+        return 1; // Exit with error code
+    }
+
+    // Initialize the dynamically allocated array
+    for (i = 0; i < ARRAY_SIZE; i++)
+    {
+        p[i] = i + 1; // Assign values (same as static array)
+    }
+
+    // Iterate and print the static array
+    printf("Static array elements:\n");
+    for (i = 0; i < ARRAY_SIZE; i++)
+    {
+        printf("%d ", A[i]);
+    }
+    printf("\n");
+
+    // Iterate and print the dynamic array
+    printf("Dynamic array elements:\n");
+    for (i = 0; i < ARRAY_SIZE; i++)
+    {
+        printf("%d ", p[i]);
+    }
+    printf("\n");
+
+    // Free dynamically allocated memory
+    free(p);
+
+    return 0;
 }
