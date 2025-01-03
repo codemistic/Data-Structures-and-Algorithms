@@ -1,76 +1,82 @@
-//Author: Vaibhav Pandey
-//Date Created: 06/03/2022
-//Title: Implementing Linked List data structure in Java from scratch
+// Author: Vaibhav Pandey
+// Date Created: 06/03/2022
+// Title: Implementing Linked List data structure in Java from scratch
 
+// Start of LinkedList class
+public class LinkedList {
 
-//Start of main LinkedList class
-public class LinkedList{
-
-    //Node class for storing current node's value and the address to the next node
-    static class Node{
-        Node next;
+    // Node class representing each element in the list
+    static class Node {
         int value;
+        Node next;
 
-        //Constructor that initializes node's value
-        public Node(int value){
+        // Constructor to initialize the node's value
+        public Node(int value) {
             this.value = value;
         }
     }
 
-    //Initializing the first node to null
-    Node first = null;
+    // Head of the linked list
+    private Node head = null;
 
-    //Function for adding elements at the front of the list
-    public void addAtFront(Node node){
-        //Assign the next node's address to first and store the current node's address in first
-        node.next = first;
-        first = node;
+    // Add a node at the front of the list
+    public void addAtFront(int value) {
+        Node node = new Node(value);
+        node.next = head;
+        head = node;
     }
 
-    //Function for adding elements at the end of the list
-    public void addAtEnd(Node node){
-        //If the list is already empty, just assign the first address to the current node
-        if(first == null){
-            first = node;
-        }
-        //If the list is not empty, traverse the list from the first element to the last element and add the current node at last
-        else{
-            Node ptr = first;
-            while(ptr.next != null){
-                ptr = ptr.next;
+    // Add a node at the end of the list
+    public void addAtEnd(int value) {
+        Node node = new Node(value);
+        if (head == null) { // If the list is empty
+            head = node;
+        } else {
+            Node current = head;
+            while (current.next != null) {
+                current = current.next;
             }
-            ptr.next = node;
+            current.next = node;
         }
     }
 
-    //Function for removing the first element of the list
-    public void removeFront(){
-        //To remove the first element, just set the next element to first
-        first = first.next;
-    }
-
-
-    //Function to print the list
-    public void print(){
-        //For printing just traverse the list from first to last
-        Node ptr = first.next;
-        System.out.print(first.value);
-        while(ptr != null){
-            System.out.print(" -> " + ptr.value);
-            ptr = ptr.next;
+    // Remove the first node from the list
+    public void removeFront() {
+        if (head != null) { // Check if the list is not empty
+            head = head.next;
+        } else {
+            System.out.println("List is empty. Nothing to remove.");
         }
-        System.out.println(" -> null");
-        //The last element of the list points to null
     }
 
-    //Main function to run the LinkedList class
-    public static void main(String[] args){
+    // Print the linked list
+    public void print() {
+        if (head == null) {
+            System.out.println("List is empty.");
+            return;
+        }
+
+        Node current = head;
+        while (current != null) {
+            System.out.print(current.value + " -> ");
+            current = current.next;
+        }
+        System.out.println("null");
+    }
+
+    // Main function to test the LinkedList class
+    public static void main(String[] args) {
         LinkedList list = new LinkedList();
-        list.addAtEnd(new Node(5));
-        list.addAtEnd(new Node(7));
-        list.addAtFront(new Node(10));
-        list.addAtEnd(new Node(2));
+        list.addAtEnd(5);
+        list.addAtEnd(7);
+        list.addAtFront(10);
+        list.addAtEnd(2);
+
+        System.out.println("Linked List:");
+        list.print();
+
+        System.out.println("\nRemoving the first element:");
+        list.removeFront();
         list.print();
     }
-
 }
