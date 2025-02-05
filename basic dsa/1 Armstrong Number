@@ -17,3 +17,31 @@ int main(){
 
     }
 }
+
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main() {
+    int n, sum = 0;
+    cout << "Enter a number: ";
+    cin >> n;
+    
+    int original_n = n;
+    int num_digits = to_string(n).length();  // Get the number of digits
+
+    while (n > 0) {
+        int lastDigit = n % 10;
+        sum += pow(lastDigit, num_digits);  // Raise the digit to the power of the number of digits
+        n /= 10;
+    }
+
+    if (sum == original_n) {
+        cout << original_n << " is an Armstrong Number." << endl;
+    } else {
+        cout << original_n << " is not an Armstrong Number." << endl;
+    }
+
+    return 0;
+}
+
