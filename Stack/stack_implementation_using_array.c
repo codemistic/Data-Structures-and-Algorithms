@@ -1,79 +1,99 @@
 #include <stdio.h>
 #include <stdlib.h>
-struct Stack
-{
+
+struct Stack {
     int size;
     int top;
     int *S;
 };
-void create(struct Stack *st)
-{
-    printf("Enter Size");
+
+// Create the stack
+void create(struct Stack *st) {
+    printf("Enter Stack Size: ");
     scanf("%d", &st->size);
     st->top = -1;
     st->S = (int *)malloc(st->size * sizeof(int));
+    if (!st->S) {
+        fprintf(stderr, "Memory allocation failed!\n");
+        exit(EXIT_FAILURE);
+    }
 }
-void Display(struct Stack st)
-{
-    int i;
-    for (i = st.top; i >= 0; i--)
-        printf("%d ", st.S[i]);
+
+// Display stack elements
+void display(const struct Stack *st) {
+    if (st->top == -1) {
+        printf("Stack is empty\n");
+        return;
+    }
+    for (int i = st->top; i >= 0; i--)
+        printf("%d ", st->S[i]);
     printf("\n");
 }
-void push(struct Stack *st, int x)
-{
-    if (st->top == st->size - 1)
-        printf("Stack overflow\n");
-    else
-    {
-        st->top++;
-        st->S[st->top] = x;
+
+// Push an element onto the stack
+void push(struct Stack *st, int x) {
+    if (st->top == st->size - 1) {
+        fprintf(stderr, "Stack Overflow\n");
+        return;
     }
+    st->S[++st->top] = x;
 }
-int pop(struct Stack *st)
-{
-    int x = -1;
-    if (st->top == -1)
-        printf("Stack Underflow\n");
-    else
-    {
-        x = st->S[st->top--];
+
+// Pop an element from the stack
+int pop(struct Stack *st) {
+    if (st->top == -1) {
+        fprintf(stderr, "Stack Underflow\n");
+        return -1;
     }
-    return x;
+    return st->S[st->top--];
 }
-int peek(struct Stack st, int index)
-{
-    int x = -1;
-    if (st.top - index + 1 < 0)
-        printf("Invalid Index \n");
-    x = st.S[st.top - index + 1];
-    return x;
+
+// Peek at a specific position from the top
+int peek(const struct Stack *st, int index) {
+    int pos = st->top - index + 1;
+    if (pos < 0 || pos > st->top) {
+        fprintf(stderr, "Invalid Index\n");
+        return -1;
+    }
+    return st->S[pos];
 }
-int isEmpty(struct Stack st)
-{
-    if (st.top == -1)
-        return 1;
-    return 0;
+
+// Check if the stack is empty
+int isEmpty(const struct Stack *st) {
+    return st->top == -1;
 }
-int isFull(struct Stack st)
-{
-    return st.top == st.size - 1;
+
+// Check if the stack is full
+int isFull(const struct Stack *st) {
+    return st->top == st->size - 1;
 }
-int stackTop(struct Stack st)
-{
-    if (!isEmpty(st))
-        return st.S[st.top];
-    return -1;
+
+// Get the top element of the stack
+int stackTop(const struct Stack *st) {
+    return isEmpty(st) ? -1 : st->S[st->top];
 }
-int main()
-{
+
+// Free allocated memory
+void destroy(struct Stack *st) {
+    free(st->S);
+    st->S = NULL;
+    st->size = st->top = 0;
+}
+
+int main() {
     struct Stack st;
     create(&st);
+
     push(&st, 10);
     push(&st, 20);
     push(&st, 30);
     push(&st, 40);
-    printf("%d \n", peek(st, 2));
-    Display(st);
+
+    printf("Peek at index 2: %d\n", peek(&st, 2));
+    
+    display(&st);
+
+    destroy(&st);  // Free allocated memory
+
     return 0;
 }
