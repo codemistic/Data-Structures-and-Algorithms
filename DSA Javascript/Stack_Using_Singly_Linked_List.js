@@ -1,83 +1,71 @@
-//Stack using linkedlist
-function stackUsingLL(){
-  //Node 
-  let Node = function(elm){
-    this.element = elm;
-    this.next = null;
+class StackUsingLL {
+  constructor() {
+    this.head = null;
+    this.length = 0;
   }
-  
-  //To keep track of the size  
-  let length = 0;
-  
-  //To keep track of the list
-  let head = null;
-  
-  //Push data in the stack
-  this.push = function(elm){
-    //Create a new node
-    let node = new Node(elm),
-    current;
-    
-    //Add the new node at the top
-    current = head;
-    node.next = current;
-    head = node;
-    
-    length++;
-  }
-  
-  //Pop the item from the stack
-  this.pop = function(){
-    let current = head;
-    
-    //If there is item then remove it 
-    //and make the next element as the first
-    if(current){
-      let elm = current.element;
-      current = current.next;
-      head = current;
-      length--;
-      return elm;
-    }
-    
-    return null;   
-  }
-  
-  //Return the first element in the stack
-  this.peek = function(){    
-    if(head){    
-      return head.element;
-    }
 
-    return null;
+  // Node class
+  class Node {
+    constructor(element) {
+      this.element = element;
+      this.next = null;
+    }
   }
-  
-  //Convert the stack to an array
-  this.toArray = function(){
-    let arr = [];
-    let current = head;
-    while(current){
+
+  // Push an element onto the stack
+  push(element) {
+    const node = new Node(element);
+    node.next = this.head;
+    this.head = node;
+    this.length++;
+  }
+
+  // Pop an element from the stack
+  pop() {
+    if (!this.head) return null;
+    const element = this.head.element;
+    this.head = this.head.next;
+    this.length--;
+    return element;
+  }
+
+  // Get the top element of the stack
+  peek() {
+    return this.head ? this.head.element : null;
+  }
+
+  // Convert stack to an array
+  toArray() {
+    const arr = [];
+    let current = this.head;
+    while (current) {
       arr.push(current.element);
       current = current.next;
     }
-    
     return arr;
   }
-  
-  //Check if stack is empty
-  this.isEmpty = function(){
-    return length === 0;
+
+  // Check if the stack is empty
+  isEmpty() {
+    return this.length === 0;
   }
-  
-  //Return the size of the stack
-  this.size = function(){
-    return length;
+
+  // Get stack size
+  size() {
+    return this.length;
   }
-  
-  //Clear the stack
-  this.clear = function(){
-    head = null;
-    length = 0;
+
+  // Clear the stack
+  clear() {
+    this.head = null;
+    this.length = 0;
   }
-  
 }
+
+// Example usage
+const stack = new StackUsingLL();
+stack.push(10);
+stack.push(20);
+console.log(stack.pop()); // 20
+console.log(stack.peek()); // 10
+console.log(stack.toArray()); // [10]
