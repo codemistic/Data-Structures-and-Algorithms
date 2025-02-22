@@ -1,30 +1,22 @@
-#include<iostream>
-#include<math.h>
+#include <iostream>
 using namespace std;
-int main(){
-    long long a[100000];
-    long long n;
-    long long c=0,p=0,sum=0;
-    cin>>n;
-    for(int i=0;i<n;i++)
-        cin>>a[i];
-    for(int i=0;i<n;i++){
-        if(a[i]==-1)
-        {c++;          
-        }
-        else
-        {p+=a[i];      
-        }       
-        if(p<=0)
-        {sum++;     
-        c--;   
-        }
-        else if(c!=0)
-        {p--;    
-        c--;     
+
+int main() {
+    long long n, p = 0, sum = 0, x;
+    cin >> n;
+
+    while (n--) {
+        cin >> x;
+        if (x == -1) {
+            if (p > 0) 
+                p--;  // A police officer handles the crime
+            else 
+                sum++; // No police officer available, crime goes unhandled
+        } else {
+            p += x; // Recruit police officers
         }
     }
-    cout<<sum<<endl;
+    
+    cout << sum << endl;
     return 0;
-
 }
