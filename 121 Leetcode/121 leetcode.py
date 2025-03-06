@@ -1,10 +1,12 @@
+from typing import List
+
 class Solution:
     def maxProfit(self, prices: List[int]) -> int:
-        maxProfit = 0
-        currentMax = 0
+        max_profit = 0
+        max_future_price = 0  # Maximum price encountered from the future
 
-        for i in reversed(prices):
-            currentMax = max(currentMax, i)
-            profit = currentMax - i
-            maxProfit = max(profit, maxProfit)
-        return maxProfit  
+        for price in reversed(prices):
+            max_future_price = max(max_future_price, price)  # Update max future price
+            max_profit = max(max_profit, max_future_price - price)  # Update max profit
+        
+        return max_profit
