@@ -1,19 +1,40 @@
-#include<iostream>
+#include <iostream>
+#include <cmath> // for pow function
 using namespace std;
-int main(){
-    int lastDigit,sum=0,n;
-    cin>>n;
-    int original_n =n;
 
-    while(n>0){
-        lastDigit=n%10;
-        sum = sum + lastDigit*lastDigit*lastDigit;
-        n=n/10;
-    }
-    if(sum==original_n){
-        cout<<"Armstrong Number";
-    }else{
-        cout<<"Not an Armstrong Number";
+// Function to check if a number is an Armstrong number
+bool isArmstrong(int n) {
+    int original_n = n;
+    int sum = 0, numDigits = 0;
 
+    // Count the number of digits
+    int temp = n;
+    while (temp > 0) {
+        numDigits++;
+        temp /= 10;
     }
+
+    // Calculate sum of each digit raised to the power of numDigits
+    temp = n;
+    while (temp > 0) {
+        int lastDigit = temp % 10;
+        sum += pow(lastDigit, numDigits); // Raising to power numDigits
+        temp /= 10;
+    }
+
+    return sum == original_n;
+}
+
+int main() {
+    int n;
+    cout << "Enter a number: ";
+    cin >> n;
+
+    if (isArmstrong(n)) {
+        cout << "Armstrong Number";
+    } else {
+        cout << "Not an Armstrong Number";
+    }
+
+    return 0;
 }
