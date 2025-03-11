@@ -1,68 +1,58 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 
 class Tree {
-    public:
+public:
     int data;
-    int hd;
-    Tree *left;
-    Tree *right;
+    Tree *left, *right;
 
+    Tree(int val) {
+        data = val;
+        left = right = nullptr;
+    }
 };
 
-Tree* newNode(int data){
-    Tree *new_node = new Tree();
-    new_node->data = data;
-    new_node->hd = 0;
-    new_node->left = NULL;
-    new_node->right = NULL;
-    return new_node;
+// Function to compute the bottom view using BFS (level order traversal)
+void bottomView(Tree* root) {
+    if (!root) return;
 
-}
+    map<int, int> m; // Stores horizontal distance and node value
+    queue<pair<Tree*, int>> q; // Queue for BFS traversal
 
-void setHorizontalDistance(Tree* root, int hd){
+    q.push({root, 0});
 
-    if(root == NULL)return;
+    while (!q.empty()) {
+        auto [node, hd] = q.front();
+        q.pop();
 
-  root->hd = hd;
-  setHorizontalDistance(root->left, hd-1);
-  setHorizontalDistance(root->right, hd +1); 
-}
-void bottomView(Tree *root, map<int, pair<int,int>>&m, int d){
-if(root == NULL)return;
-if(m[root->hd].first < d){
-m[root->hd].first = d;
-m[root->hd].second = root->data;
-}
-if(root->left)
-bottomView(root->left, m, d+1 );
+        // Overwrite the value at each HD since the last one is the bottom view
+        m[hd] = node->data;
 
-if(root->right)
-bottomView(root->right, m, d+1);
-}
-
-int main(){
-   
-   Tree *root =  newNode(20);
-    root->left =  newNode(8);
-    root->right =  newNode(22);
-    root->left->left =  newNode(5);
-    root->left->right =  newNode(3);
-    root->right->left =  newNode(4);
-    root->right->right =  newNode(25);
-    root->left->right->left =  newNode(10);
-    root->left->right->right =  newNode(14);
-
-    setHorizontalDistance(root, 0);
-
-    map<int, pair<int, int>>m;
-    bottomView(root, m, 1);
-
-    for(auto x: m){
-        cout<<x.second.second<<" ";
+        if (node->left)
+            q.push({node->left, hd - 1});
+        if (node->right)
+            q.push({node->right, hd + 1});
     }
 
+    // Print the bottom view
+    for (auto [hd, value] : m) {
+        cout << value << " ";
+    }
+    cout << endl;
+}
 
+int main() {
+    Tree* root = new Tree(20);
+    root->left = new Tree(8);
+    root->right = new Tree(22);
+    root->left->left = new Tree(5);
+    root->left->right = new Tree(3);
+    root->right->left = new Tree(4);
+    root->right->right = new Tree(25);
+    root->left->right->left = new Tree(10);
+    root->left->right->right = new Tree(14);
+
+    bottomView(root);
 
     return 0;
 }
