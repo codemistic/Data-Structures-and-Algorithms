@@ -1,14 +1,26 @@
-#include<iostream>
+#include <iostream>
 using namespace std;
-int main(){
+
+int main() {
     int n;
+    cout << "Enter number of terms: ";
     cin >> n;
 
-    int t1=0,t2=1;
-    for(int i=1;i<=n;i++){
-        cout<<t1<<endl;
-        int next_term=t1+t2;
-        t1=t2;
-        t2=next_term;
+    if (n <= 0) {
+        cout << "Please enter a positive integer." << endl;
+        return 0;
     }
+
+    int t1 = 0, t2 = 1;
+    cout << "Fibonacci Series: " << endl;
+
+    for (int i = 1; i <= n; i++) {
+        cout << t1 << " ";
+        int next_term = t1 + t2;
+        t1 = t2;
+        t2 = next_term;
+    }
+
+    cout << endl;
+    return 0;
 }
