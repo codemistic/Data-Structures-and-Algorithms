@@ -57,8 +57,6 @@ The 17 smallest 7-mirror numbers are:
 
 # Constraints
 ```
-- 2 <= k <= 9
-
-- 1 <= n <= 30
-
+2 <= k <= 9
+1 <= n <= 30
 ```
