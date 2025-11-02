@@ -1860,9 +1860,9 @@ Steps to contribute in this repository
     </td>
     <td align="center" style="word-wrap: break-word; width: 150.0; height: 150.0">
         <a href=https://github.com/AdityaMandage>
-            <img src=https://avatars.githubusercontent.com/u/75879189?v=4 width="100;"  style="border-radius:50%;align-items:center;justify-content:center;overflow:hidden;padding-top:10px" alt=Aditya Mandage/>
+            <img src=https://avatars.githubusercontent.com/u/75879189?v=4 width="100;"  style="border-radius:50%;align-items:center;justify-content:center;overflow:hidden;padding-top:10px" alt=TH3_4D1TY4/>
             <br />
-            <sub style="font-size:14px"><b>Aditya Mandage</b></sub>
+            <sub style="font-size:14px"><b>TH3_4D1TY4</b></sub>
         </a>
     </td>
     <td align="center" style="word-wrap: break-word; width: 150.0; height: 150.0">
