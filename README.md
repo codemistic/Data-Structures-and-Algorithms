@@ -165,9 +165,9 @@ Steps to contribute in this repository
     </td>
     <td align="center" style="word-wrap: break-word; width: 150.0; height: 150.0">
         <a href=https://github.com/rohansrivastava5491>
-            <img src=https://avatars.githubusercontent.com/u/33935946?v=4 width="100;"  style="border-radius:50%;align-items:center;justify-content:center;overflow:hidden;padding-top:10px" alt=rohansrivastava5491/>
+            <img src=https://avatars.githubusercontent.com/u/33935946?v=4 width="100;"  style="border-radius:50%;align-items:center;justify-content:center;overflow:hidden;padding-top:10px" alt=Rohan Srivastava/>
             <br />
-            <sub style="font-size:14px"><b>rohansrivastava5491</b></sub>
+            <sub style="font-size:14px"><b>Rohan Srivastava</b></sub>
         </a>
     </td>
     <td align="center" style="word-wrap: break-word; width: 150.0; height: 150.0">
@@ -1853,9 +1853,9 @@ Steps to contribute in this repository
 <tr>
     <td align="center" style="word-wrap: break-word; width: 150.0; height: 150.0">
         <a href=https://github.com/scopophobic>
-            <img src=https://avatars.githubusercontent.com/u/66241061?v=4 width="100;"  style="border-radius:50%;align-items:center;justify-content:center;overflow:hidden;padding-top:10px" alt=Adithyan Madhu/>
+            <img src=https://avatars.githubusercontent.com/u/66241061?v=4 width="100;"  style="border-radius:50%;align-items:center;justify-content:center;overflow:hidden;padding-top:10px" alt=Adithyan/>
             <br />
-            <sub style="font-size:14px"><b>Adithyan Madhu</b></sub>
+            <sub style="font-size:14px"><b>Adithyan</b></sub>
         </a>
     </td>
     <td align="center" style="word-wrap: break-word; width: 150.0; height: 150.0">
