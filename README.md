@@ -10,7 +10,7 @@
 
 Steps to contribute in this repository
 
-    1. Fork this repo
+    1. Fork this repo 
     2. Propose/Update (C++/Java/Python) file of your choice
     3. Add useful code for the open-source community
     4. Make pull request
