@@ -1331,10 +1331,10 @@ Steps to contribute in this repository
         </a>
     </td>
     <td align="center" style="word-wrap: break-word; width: 150.0; height: 150.0">
-        <a href=https://github.com/Millie0024>
-            <img src=https://avatars.githubusercontent.com/u/95537599?v=4 width="100;"  style="border-radius:50%;align-items:center;justify-content:center;overflow:hidden;padding-top:10px" alt=Soumili Chakraborty/>
+        <a href=https://github.com/milimeetscode>
+            <img src=https://avatars.githubusercontent.com/u/95537599?v=4 width="100;"  style="border-radius:50%;align-items:center;justify-content:center;overflow:hidden;padding-top:10px" alt=Mili/>
             <br />
-            <sub style="font-size:14px"><b>Soumili Chakraborty</b></sub>
+            <sub style="font-size:14px"><b>Mili</b></sub>
         </a>
     </td>
     <td align="center" style="word-wrap: break-word; width: 150.0; height: 150.0">
