@@ -1,0 +1,94 @@
+// Author: Jawakar Sri
+// Date Created: 01/10/2024
+// Title: LeetCode Problem - Copy List with Random Pointer
+// Problem Link: https://leetcode.com/problems/copy-list-with-random-pointer/
+
+// Definition for a Node.
+class Node {
+    int val;
+    Node next;
+    Node random;
+    public Node(int val) {
+        this.val = val;
+        this.next = null;
+        this.random = null;
+    }
+}
+
+// Solution 1: Using extra space (HashMap)
+class SolutionUsingHashMap {
+    public Node copyRandomList(Node head) {
+        if (head == null) return null;
+
+        Node curr = head, newHead = new Node(0);
+        Node newCurr = newHead;
+        HashMap<Node, Node> map = new HashMap();
+
+        // First pass: Create new nodes and store them in the map
+        while (curr != null) {
+            if (!map.containsKey(curr)) {
+                newCurr.next = new Node(curr.val);
+                map.put(curr, newCurr.next);
+            } else {
+                newCurr.next = map.get(curr);
+            }
+
+            newCurr = newCurr.next;
+
+            // Create random pointers
+            if (curr.random != null) {
+                if (!map.containsKey(curr.random)) {
+                    newCurr.random = new Node(curr.random.val);
+                    map.put(curr.random, newCurr.random);
+                } else {
+                    newCurr.random = map.get(curr.random);
+                }
+            }
+
+            curr = curr.next;
+        }
+
+        return newHead.next;
+    }
+}
+
+// Solution 2: Constant space (In-place modification)
+class SolutionUsingInPlace {
+    public Node copyRandomList(Node head) {
+        if (head == null) return null;
+
+        Node curr = head;
+
+        // Step 1: Create a new node for each original node and link them in place
+        while (curr != null) {
+            Node next = curr.next;
+            curr.next = new Node(curr.val);
+            curr.next.next = next;
+            curr = next;
+        }
+
+        // Step 2: Set random pointers for the copied nodes
+        curr = head;
+        while (curr != null) {
+            if (curr.random != null) {
+                curr.next.random = curr.random.next;
+            }
+            curr = curr.next.next;
+        }
+
+        // Step 3: Separate the original and copied lists
+        curr = head;
+        Node newHead = new Node(0); // Dummy node
+        Node newCurr = newHead;
+
+        while (curr != null) {
+            Node next = curr.next.next;
+            newCurr.next = curr.next;
+            newCurr = newCurr.next;
+            curr.next = next;
+            curr = next;
+        }
+
+        return newHead.next;
+    }
+}
