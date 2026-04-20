@@ -1,4 +1,4 @@
-#include <stdio.h>
+#include <stdio.h>// efficient solution
 #include <stdlib.h>
 int main()
 {
