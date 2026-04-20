@@ -5,7 +5,7 @@
 # 2.) If n is divisible by 2, divide by 2.( if n % 2 == 0, then n = n / 2 ) ,
 # 3.) If n is divisible by 3, divide by 3. (if n % 3 == 0, then n = n / 3 ). 
 
-# Now solve this iteratively :
+# Now solve this iteratively 
 
 from sys import stdin
 from sys import maxsize as MAX_VALUE
