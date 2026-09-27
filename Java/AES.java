@@ -42,7 +42,7 @@ public class AESExample
     }   
     catch (InvalidAlgorithmParameterException | InvalidKeyException | NoSuchAlgorithmException | InvalidKeySpecException | BadPaddingException | IllegalBlockSizeException | NoSuchPaddingException e)   
     {  
-      System.out.println("Error occured during encryption: " + e.toString());  
+      System.out.println("Error occurred during encryption: " + e.toString());  
     }  
     return null;  
     }  
@@ -68,7 +68,7 @@ public class AESExample
     }   
     catch (InvalidAlgorithmParameterException | InvalidKeyException | NoSuchAlgorithmException | InvalidKeySpecException | BadPaddingException | IllegalBlockSizeException | NoSuchPaddingException e)   
     {  
-      System.out.println("Error occured during decryption: " + e.toString());  
+      System.out.println("Error occurred during decryption: " + e.toString());  
     }  
     return null;  
     }  
