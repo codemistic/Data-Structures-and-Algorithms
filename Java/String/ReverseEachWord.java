@@ -12,8 +12,7 @@ public class ReverseEachWord {
     public static String reversed(String str) {
         String ans = "";
         int currentWordStart = 0;
-        int i = 0;
-        for (; i < str.length() ; i++) {
+        for (int i=0 ; i < str.length() ; i++) {
             if (str.charAt(i) == ' ') {
                 int currentWordEnd = i - 1;
                 String reverse = "";
