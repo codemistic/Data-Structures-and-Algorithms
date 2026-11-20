@@ -2,7 +2,7 @@
 #include <list>
 
 using namespace std;
-
+// most efficient solution
 class Graph {
   int numVertices;
   list<int>* adjLists;
